@@ -111,7 +111,7 @@ function receiptTableDetail() {
         <td>${receiptList[i].Quantity} </td>
         <td>${receiptList[i].Total} </td>
         <td>${receiptList[i].CreateAt} </td>
-        <td><img src="../icon/more-detail-icon.png" class="button-show-detail" alt="" title="hover"></td>
+        <td><img src="./icon/more-detail-icon.png" class="button-show-detail" alt="" title="hover"></td>
         </tr>
             `
     }
