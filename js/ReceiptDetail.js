@@ -9,7 +9,6 @@ function Detail(ID, IdReceipt, IdProduct, Name, Category, PriceInput, PriceOutpu
     this.PriceOutput = PriceOutput * this.Quantity;
     let timeCreate = new Date()
     this.Day = timeCreate.toLocaleString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric' })
-
 }
 
 function getPosition() {
@@ -27,8 +26,8 @@ var arrtest = [[]]
 
 btnCreateImporter.addEventListener('click', (e) => {
     var valueIdReceipt = document.getElementById("input-id-receipt").value
-
     var newBtnSubmit = btnSubmit.cloneNode(true);
+
     btnSubmit.parentNode.replaceChild(newBtnSubmit, btnSubmit);
     btnSubmit = newBtnSubmit;
 
@@ -36,7 +35,6 @@ btnCreateImporter.addEventListener('click', (e) => {
         let valuePlacementReceipt = + document.getElementById("input-placement").value
         let valueQuantityReceipt = + document.getElementById("input-quantity").value
         var error = document.querySelector(".error-receipt-detail");
-
         let position = arrProduct.length
 
         if (valuePlacementReceipt == "" || valueQuantityReceipt == "") {

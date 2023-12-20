@@ -57,7 +57,6 @@ btnBack.addEventListener("click", (e) => {
     document.getElementById("input-id-receipt").value = ""
     document.getElementById("input-username").value = ""
 
-
     main.removeAttribute("style");
     view.setAttribute("style", "display: block");
     receiptDetail.removeAttribute("style");
@@ -155,7 +154,6 @@ btnCloseCloseInventorytable.addEventListener("click", (e) => {
     main.removeAttribute("style");
     view.removeAttribute("style");
 });
-
 
 // List Items By Date 
 var btnListItemsByDate = document.querySelector("#list-items-by-date")

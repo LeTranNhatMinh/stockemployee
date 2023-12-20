@@ -5,8 +5,6 @@ btnSearch.addEventListener('click', (e) => {
     let isValue = false
     var error = document.querySelector(".error-search");
 
-
-
     if (!isValidDate(inputDateValue)) {
         error.innerHTML = `Please use 'dd/mm/yyyy' and make sure day is between 1 and 31, and month is between 1 and 12.`
         document.querySelector("#items-by-date-input").value = ""
@@ -16,7 +14,6 @@ btnSearch.addEventListener('click', (e) => {
             if (inputDateValue == arrProduct[i].Day) {
                 isValue = true
             }
-
         }
         var addedReceipts = new Set();
         if (isValue) {

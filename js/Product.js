@@ -33,7 +33,6 @@ function productTable(tableId, ProductList) {
           <th>PriceOutput</th>
           </tr>
         `
-
     for (let i = 0; i < ProductList.length; i++) {
         tableProduct.innerHTML += `
         <td>${ProductList[i].ID} </td> 

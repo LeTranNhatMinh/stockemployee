@@ -11,11 +11,9 @@ function Receipt(IdReceipt, UserName) {
 }
 
 var btnCreateImporter = document.querySelector(".btn-create-impoter")
-
 var receiptList = []
 
 btnCreateImporter.addEventListener('click', (e) => {
-
     e.preventDefault();
 
     var valueIdReceipt = document.getElementById("input-id-receipt").value.trim();
@@ -29,6 +27,7 @@ btnCreateImporter.addEventListener('click', (e) => {
         document.getElementById("input-username").value = ""
     } else {
         var isDuplicate = false;
+
         for (var i = 0; i < receiptList.length; i++) {
             if (receiptList[i].IdReceipt === valueIdReceipt) {
                 isDuplicate = true;
@@ -45,6 +44,7 @@ btnCreateImporter.addEventListener('click', (e) => {
             clearError();
             let main = document.querySelector("#product-receipt-add");
             let view = document.querySelector("#receipt-detail-add");
+
             main.removeAttribute("style");
             view.setAttribute("style", "display: block");
 

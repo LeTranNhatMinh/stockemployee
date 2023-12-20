@@ -10,7 +10,6 @@ btnSubmitChange.addEventListener('click', (e) => {
         document.getElementById("input-new-price").value = ""
         document.getElementById("input-placement-change").value = ""
     } else {
-
         ProductList[valuePlacementChange - 1].PriceInput = + valueNewPrice
         ProductList[valuePlacementChange - 1].PriceOutput = + valueNewPrice + Math.floor((valueNewPrice * 0.1) + (valueNewPrice * 0.3))
 
