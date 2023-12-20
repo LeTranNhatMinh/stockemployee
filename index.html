@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./js/Product.js"></script>
+    <title>StockEmployee</title>
+  </head>
+  <body>
+    <div id="main">
+      <ul id="main-menu">
+        <li id="nav">
+          <h2>Product</h2>
+          <ul class="nav-menu">
+            <li id="product-main">
+              <button id="product">List Of Products</button>
+            </li>
+            <li>
+              <button id="change-price">Change Price</button>
+            </li>
+          </ul>
+        </li>
+        <li id="nav">
+          <h2>Storage</h2>
+          <ul class="nav-menu">
+            <li id="product-main">
+              <button id="receipt">Add Entry Form</button>
+            </li>
+            <li>
+              <button id="list-items-by-date">List Items By Date</button>
+            </li>
+            <li>
+              <button id="inventory">Inventory</button>
+            </li>
+            <li>
+              <button id="entry-detail">Details Of Entry Form</button>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Product List -->
+    <div>
+      <div id="product-item">
+        <h1>List Of Products</h1>
+        <button class="close-product-table">x</button>
+        <table id="table-product"></table>
+        <script>
+          productTable("#table-product", ProductList);
+        </script>
+      </div>
+    </div>
+
+    <!-- Add  -->
+    <div id="product-receipt-add">
+      <button class="close-add-receipt">x</button>
+      <h1>Input Form</h1>
+      <div class="input-receipt">
+        <div>
+          <h3>Id of the warehouse receipt</h3>
+          <input type="text" class="id" id="input-id-receipt" />
+        </div>
+        <div>
+          <h3>UserName</h3>
+          <input type="text" class="username" id="input-username" />
+        </div>
+      </div>
+      <div class="error"></div>
+      <button class="btn-create-impoter"><h3>Confirm</h3></button>
+      <div>
+        <div id="create-importer-head">
+          <table class="table-receipt">
+            <tr>
+              <th>Id</th>
+              <th>UserName</th>
+              <th>Quantity</th>
+              <th>Total</th>
+              <th>CreateAt</th>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script src="./js/Receipt.js">
+      receiptTable()
+    </script>
+
+    <!-- Add Receipt Detail -->
+    <div id="receipt-detail-add">
+      <button class="back-receipt-detail"><</button>
+      <button class="close-add-receipt-detail">x</button>
+      <div id="receipt-detail">
+        <h1>List Of Products</h1>
+
+        <table id="table-receipt-detail-view"></table>
+        <script>
+          productTable("#table-receipt-detail-view", ProductList);
+        </script>
+      </div>
+      <div id="receipt-detail-form-input">
+        <div>
+          <h3>Select the product placement you want to add</h3>
+          <input type="number" class="placement" id="input-placement" />
+        </div>
+        <div>
+          <h3>Quantity</h3>
+          <input type="number" class="quantity" id="input-quantity" />
+        </div>
+      </div>
+      <div class="error-receipt-detail"></div>
+
+      <button class="submit-receipt">Submit</button>
+      <div>
+        <table class="entry-details-table">
+          <tr>
+            <th>Id</th>
+            <th>IdReceipt</th>
+            <th>IdProduct</th>
+            <th>Name</th>
+            <th>IdCategory</th>
+            <th>PriceInput</th>
+            <th>PriceOutput</th>
+            <th>Quantity</th>
+          </tr>
+        </table>
+        <script src="./js/ReceiptDetail.js"></script>
+      </div>
+    </div>
+
+    <!-- Chance Price -->
+    <div id="product-change-price">
+      <button class="close-change-price">x</button>
+      <h1>List Of Products</h1>
+
+      <table id="table-change-price"></table>
+      <script>
+        productTable("#table-change-price", ProductList);
+      </script>
+      <div id="input-change-form">
+        <div>
+          <h3>Select the product you want to change price</h3>
+          <input
+            type="number"
+            class="placement-change"
+            id="input-placement-change"
+          />
+        </div>
+        <div>
+          <h3>New price</h3>
+          <input type="number" class="new-price" id="input-new-price" />
+        </div>
+      </div>
+      <div class="error-change-price"></div>
+
+      <div>
+        <button class="change-price"><h3>Change Price</h3></button>
+        <script src="./js/ChangePrice.js"></script>
+      </div>
+    </div>
+
+    <!-- Inventory Table -->
+    <div id="inventory-view">
+      <button class="close-inventory-table">x</button>
+      <h1>Inventory</h1>
+      <table class="inventory-table">
+        <tr>
+          <th>IdProduct</th>
+          <th>Name</th>
+          <th>TotalRecent</th>
+          <th>QuantityRecent</th>
+          <th>IdCategory</th>
+          <th>Total</th>
+          <th>Quantity</th>
+        </tr>
+      </table>
+    </div>
+    <script src="./js/Inventory.js"></script>
+
+    <!-- Entry Details -->
+    <div id="entry-detail-view">
+      <button class="close-detail-view">x</button>
+      <h1>Warehouse receipt details</h1>
+      <div>
+        <table class="table-receipt-detail">
+          <tr>
+            <th>Id</th>
+            <th>UserName</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th>CreateAt</th>
+          </tr>
+        </table>
+      </div>
+      <table class="table-entry-detail">
+        <tr>
+          <th>IdReceipt</th>
+          <th>IdProduct</th>
+          <th>Name</th>
+          <th>IdCategory</th>
+          <th>PriceInput</th>
+          <th>PriceOutput</th>
+          <th>Quantity</th>
+        </tr>
+      </table>
+    </div>
+    <div id="items-by-date-view">
+      <button class="close-search-view">x</button>
+
+      <div id="items-by-date-form">
+        <h1>Search For Items By Date Entered</h1>
+        <div>
+          <h3>Enter search date in dd/mm/yyyy format</h3>
+          <input type="text" id="items-by-date-input" />
+        </div>
+        <div class="error-search"></div>
+        <button class="search-items">Search</button>
+      </div>
+      <table id="search-table">
+        <th>IdReceipt</th>
+        <th>IdProduct</th>
+        <th>Name</th>
+        <th>IdCategory</th>
+        <th>PriceInput</th>
+        <th>PriceOutput</th>
+        <th>Quantity</th>
+        <th>CreateAt</th>
+      </table>
+      <script src="./js/ListItemsByDate.js"></script>
+    </div>
+  </body>
+  <script src="./main.js"></script>
+</html>
